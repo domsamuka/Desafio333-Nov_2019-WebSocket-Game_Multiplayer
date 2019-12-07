@@ -1,16 +1,6 @@
 	
-	// console.log('> Script started')
-
-/*
-	console.log( 'X: '+ randMultiple( vFrameCanvas , vScalePix ) );
-	console.log( 'Y: '+ randMultiple( vFrameCanvas , vScalePix ) );
-	console.log( '' );
-*/
-	const PORT = process.env.PORT || 3000 ;
-
 	const express = require('express')
 	const webApp = express()
-	const webServer = require('http').createServer(webApp)
 	const io = require('socket.io')(webServer)
 
 	const game = createGame() ;
@@ -82,7 +72,6 @@
 		io.emit('concurrent-connections', io.engine.clientsCount)
 	}, 5000)
 
-
 	io.on('connection', function(socket){
 		const admin = socket.handshake.query.admin
 
@@ -126,7 +115,6 @@
 			socket.broadcast.emit('player-remove', socket.id)
 		})
 
-
 		let fruitGameInterval
 		socket.on('admin-start-fruit-game', (interval) => {
 			console.log('> Fruit Game start')
@@ -166,8 +154,6 @@
 	});
 
 	function createGame() {
-
-		// console.log('> Starting new game')
 
 		let fruitGameInterval
 
@@ -212,13 +198,11 @@
 		function movePlayer(socketId, direction) {
 
 			const player = game.players[socketId] ;
-
-/*
+			/*
 			console.log( 'X: '+ player.x );
 			console.log( 'Y: '+ player.y );
 			console.log( '' );
-*/
-
+			*/
 			if (direction === 'up' && player.y - 0 >= 0 ) {
 				player.y = player.y - vScalePix
 			}
@@ -300,6 +284,11 @@
 				game.players[socketId].score = 0
 			}
 		}
-
 		return game
 	}
+
+    const PORT = process.env.PORT || 3000 ;
+
+    webApp.listen( PORT, function() {
+      console.log('App de Exemplo escutando na porta 3000!');
+    });
