@@ -20,13 +20,13 @@ Desenvolvi um pequeno Game Multiplayer usando no Node.JS com Socket.IO em uma ID
 
 Fiz esse `Jogo Multiplayer` usando um tutorial do **[Filipe Deschamps](https://www.youtube.com/channel/UCU5JicSrEM5A63jkJ2QvGYw/videos)** no **[Github](https://github.com/filipedeschamps/meu-primeiro-jogo-multiplayer)** e assistindo alguns **[Vídeos no Youtube](https://www.youtube.com/playlist?list=PLMdYygf53DP5SVQQrkKCVWDS0TwYLVitL)**.
 
-O objetivo desse pequenino `Jogo Multiplayer` é coletar o máximo de `Cerejas` possíveis, em uma competição frenética com multiplos jogadores online quem conseguir as primeiras `100 cereras` será o `vencedor!`... 
+O objetivo desse pequenino `Jogo Multiplayer` é coletar o máximo de `Cerejas` possíveis, em uma competição frenética com multiplos jogadores online quem conseguir as primeiras `100 cerejas` será o `vencedor!`... 
 
-Um `Smile de óculus preto` é o seu personagem principal e os `fantamas de língua de fora` são os outros jogadores concorrentes online no jogo com você.
+Um `Smile de óculos preto` é o seu personagem principal e os `fantamas com a língua de fora` são os outros jogadores concorrentes que estão online no jogo com você.
 
-OBS.: Para **`editar o game em modo servidor`** basta colocar **`'/admin' no final URL`** atual onde for testado o game! Lá também irá existir um botão chamado **`Iniciar Frutas`** para iniciar o sistema de coléta assim como exibido no exemplo da imagem aqui no topo da página.
+OBS.: Para **`editar o game em modo servidor`** basta colocar **`'/admin' no final da URL`** atual onde for testado o game! Lá também irá existir um botão chamado **`Iniciar Frutas`** para iniciar o sistema de coléta assim como exibido no exemplo da imagem aqui no topo da página.
 
-Caso você esteja testando sozinho, para ver os multiplos usuários basta abrir várias abas da mesma **`URL sem usar o '/admin' no final URL`** é claro.
+Caso você esteja testando sozinho, para ver os multiplos usuários basta abrir várias abas da mesma **`URL sem usar o '/admin' no final da URL`** é claro.
 
 Essa foi a minha `primeira experiência com Node.JS e GitHub` que estou `estudando a apenas uma semana`. Achei tudo muito divertido e empolgante. Ótimo desafio, que venham outros como esse!... 
 
