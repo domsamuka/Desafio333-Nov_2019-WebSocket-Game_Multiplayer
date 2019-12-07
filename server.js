@@ -5,7 +5,6 @@
 	console.log( 'X: '+ randMultiple( vFrameCanvas , vScalePix ) );
 	console.log( 'Y: '+ randMultiple( vFrameCanvas , vScalePix ) );
 	console.log( '' );
-	// const PORT = process.env.PORT || suaPorta
 */
 	const PORT = process.env.PORT || 3000 ;
 
