@@ -38,9 +38,7 @@ Para testar esse projeto desenvolvido no Desafio333 basta seguir os passos abaix
 2. Caso queira desenvolver sua própria versão ou modificação, faça um `Fork` deste repositório para dentro da sua conta no Github.
 3. Depois disso, simplesmente adicione `https://gitpod.io/#` na frente da URL do seu repositório, ou adicione uma extensão do navegador Chrome **[clicando aqui](https://chrome.google.com/webstore/detail/gitpod-online-ide/dodmmooeoklaejobgleioelladacbeki)** para clonar o workspace já com este repositório do jogo rodando.
 4. Faça o `commit` de suas alterações, envie para seu `Fork` e abra um Pull Request. Para o Gitpod ter acesso de escrita no seu repositório, você deve habilitar isto nas preferências do `Access Control`.
-5. Qualquer dúvida siga todos os passos ensinados no tutorial do vídeo abaixo!
-
-[![Clique Aqui Para Assistir ao Tutorial Completo!](http://img.youtube.com/vi/Q7YfzbJRzm0/0.jpg)](http://www.youtube.com/watch?v=Q7YfzbJRzm0 "")
+5. Qualquer dúvida siga todos os passos ensinados no tutorial do vídeo **[clicando Aqui](http://www.youtube.com/watch?v=Q7YfzbJRzm0)**
 
 ## Testar Node.JS => Servidor LocalHost:
 
