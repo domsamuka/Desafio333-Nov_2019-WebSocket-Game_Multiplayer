@@ -17,12 +17,18 @@
 ## Sobre o Projeto:
 
 Desenvolvi um pequeno Game Multiplayer usando no Node.JS com Socket.IO em uma IDE Online chamada **[Gitpod](https://gitpod.io)** nela consigo deixar o ambiente **100% configurado** (tanto o Frontend quanto o Backend) e pronta para programar e testar tudo em tempo de execução.
+
 Fiz esse `Jogo Multiplayer` usando um tutorial do **[Filipe Deschamps](https://www.youtube.com/channel/UCU5JicSrEM5A63jkJ2QvGYw/videos)** no **[Github](https://github.com/filipedeschamps/meu-primeiro-jogo-multiplayer)** e assistindo alguns **[Vídeos no Youtube](https://www.youtube.com/playlist?list=PLMdYygf53DP5SVQQrkKCVWDS0TwYLVitL)**.
-O objetivo desse pequenino `Jogo Multiplayer` é coletar o máximo de `Cerejas` o possível, em uma competição frenética com multiplos jogadores online. 
-Um Smile de óculus preto é o seu personagem principal e os fantamas de língua de fora são os outros jogadores online com você no jogo.
-OBS.: Para **`editar o game em modo servidor`** basta colocar **`'/admin' ao final URL`** atual onde for testado o game! Lá irá existir um botão chamado **`Iniciar Frutas`** para iniciar o sistema de coléta assim como exibido no exemplo da imagem aqui no topo da página.
-Caso esteja testando sozinho para ver os multiplos usuários basta abrir várias abas da mesma **`URL sem usar o '/admin' no final URL`** é claro.
-Essa foi a minha `primeira experiência com Node.JS e GitHub` que estou `estudando a apenas uma semana`. Achei tudo muito divertido e empolgante. Ótimo desafio que venham outros como esse!...
+
+O objetivo desse pequenino `Jogo Multiplayer` é coletar o máximo de `Cerejas` possíveis, em uma competição frenética com multiplos jogadores online quem conseguir as primeiras `100 cereras` será o `vencedor!`... 
+
+Um `Smile de óculus preto` é o seu personagem principal e os `fantamas de língua de fora` são os outros jogadores concorrentes online no jogo com você.
+
+OBS.: Para **`editar o game em modo servidor`** basta colocar **`'/admin' no final URL`** atual onde for testado o game! Lá também irá existir um botão chamado **`Iniciar Frutas`** para iniciar o sistema de coléta assim como exibido no exemplo da imagem aqui no topo da página.
+
+Caso você esteja testando sozinho, para ver os multiplos usuários basta abrir várias abas da mesma **`URL sem usar o '/admin' no final URL`** é claro.
+
+Essa foi a minha `primeira experiência com Node.JS e GitHub` que estou `estudando a apenas uma semana`. Achei tudo muito divertido e empolgante. Ótimo desafio, que venham outros como esse!... 
 
 ## Testar Node.JS => **[GiPod](https://gitpod.io/#https://github.com/domsamuka/Desafio333-Nov_2019-WebSocket-Game_Multiplayer.git)** Servidor Online:
 
