@@ -5,14 +5,16 @@
 	console.log( 'X: '+ randMultiple( vFrameCanvas , vScalePix ) );
 	console.log( 'Y: '+ randMultiple( vFrameCanvas , vScalePix ) );
 	console.log( '' );
+	// const PORT = process.env.PORT || suaPorta
 */
+	const PORT = process.env.PORT || 3000 ;
+
 	const express = require('express')
 	const webApp = express()
 	const webServer = require('http').createServer(webApp)
 	const io = require('socket.io')(webServer)
 
 	const game = createGame() ;
-
 
 	const vScalePix    = 50 ;
 	const vFrameCanvas = 500 ;
@@ -160,8 +162,8 @@
 
 	});
 
-	webServer.listen( 3000 , function(){
-		// console.log('> Server listening on port:', 3000 )
+	webServer.listen( PORT , function(){
+		console.log('> Iniciando => Server Port: ', PORT );
 	});
 
 	function createGame() {
