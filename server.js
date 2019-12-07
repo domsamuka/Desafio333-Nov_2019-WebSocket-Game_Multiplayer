@@ -149,10 +149,6 @@
 
 	});
 
-	webServer.listen( PORT , function(){
-		console.log('> Iniciando => Server Port: ', PORT );
-	});
-
 	function createGame() {
 
 		let fruitGameInterval
