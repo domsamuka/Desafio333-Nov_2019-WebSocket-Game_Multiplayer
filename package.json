@@ -1,5 +1,5 @@
 {
-  "name": "primeiro-jogo",
+  "name": "Desafio333-Nov_2019-WebSocket-Game_Multiplayer",
   "version": "1.0.0",
   "description": "Um jogo multiplayer bastante simples para testar o Socket.io",
   "scripts": {
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/domsamuka/primeiro-jogo"
+    "url": "git+https://github.com/domsamuka/Desafio333-Nov_2019-WebSocket-Game_Multiplayer"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/domsamuka/primeiro-jogo/issues"
+    "url": "https://github.com/domsamuka/Desafio333-Nov_2019-WebSocket-Game_Multiplayer/issues"
   },
-  "homepage": "https://github.com/domsamuka/primeiro-jogo#readme",
+  "homepage": "https://github.com/domsamuka/Desafio333-Nov_2019-WebSocket-Game_Multiplayer#readme",
   "dependencies": {
     "express": "^4.17.1",
     "nodemon": "^1.19.1",
