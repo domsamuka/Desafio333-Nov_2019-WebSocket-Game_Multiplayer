@@ -1,5 +1,5 @@
 
-	const PORT = process.env.PORT || 3000 ;
+	// const PORT = process.env.PORT || 3000 ;
 
 	const express = require('express')
 	const webApp = express()
@@ -154,8 +154,8 @@
 
 	})
 
-	webServer.listen( PORT , function(){
-		console.log('> Iniciando => Server Port: ', PORT );
+	webServer.listen( 3000 , function(){
+		console.log('> Iniciando => Server Port: ', 3000 );
 	})
 
 	function createGame() {
