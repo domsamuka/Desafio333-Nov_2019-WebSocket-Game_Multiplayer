@@ -1,11 +1,4 @@
-	
-	// console.log('> Script started')
 
-/*
-	console.log( 'X: '+ randMultiple( vFrameCanvas , vScalePix ) );
-	console.log( 'Y: '+ randMultiple( vFrameCanvas , vScalePix ) );
-	console.log( '' );
-*/
 	const express = require('express')
 	const webApp = express()
 	const webServer = require('http').createServer(webApp)
