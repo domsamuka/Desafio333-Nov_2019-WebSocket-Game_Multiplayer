@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/domsamuka/Desafio333-Nov_2019-WebSocket-Game_Multiplayer"
+    "url": "git+https://github.com/domsamuka/Desafio333-Nov_2019-WebSocket-Game_Multiplayer.git"
   },
   "author": "",
   "license": "MIT",
@@ -20,5 +20,7 @@
     "express": "^4.17.1",
     "nodemon": "^1.19.1",
     "socket.io": "^2.3.0"
-  }
+  },
+  "main": "ok.js",
+  "keywords": []
 }

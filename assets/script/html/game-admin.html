@@ -30,6 +30,10 @@
                 <button type="button" onclick="setMaxConcurrentConnections()">Max Conexões</button><br>
             </div> 
 
+            <div>
+                <button type="button" onclick="setMeusTestes()">Meus Testes</button><br>
+            </div> 
+
             <table id="score-table" ></table><br><br>
 
         </div>
@@ -194,8 +198,8 @@
                 connected = false
             })
 
-            socket.on('bootstrap', ( gameInitialState ) => {
-
+            socket.on( 'bootstrap' , ( gameInitialState ) => 
+            {
                 game = gameInitialState ;
 
                 console.log( '> bootstrap' );
@@ -441,6 +445,10 @@
             function setMaxConcurrentConnections() {
                 const maxConcurrentConnections = document.getElementById('maxConcurrentConnections').value
                 socket.emit('admin-concurrent-connections', maxConcurrentConnections);
+            }
+
+            function setMeusTestes() {
+                socket.emit( 'meus-testes' );
             }
 
         </script>
