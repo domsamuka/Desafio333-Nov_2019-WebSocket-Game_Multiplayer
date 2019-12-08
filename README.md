@@ -50,7 +50,7 @@ Essa foi a minha `primeira experiência com Node.JS e GitHub` que estou `estudan
 
 1. Faça o download ou Clone URL do Repositório.
 2. Extraia ou Importe para o Diritóeio Local no Seu Computador.
-3. É preciso instalar os pacotes: `default` + `express` + `socket.io`, e para fazer isso você deve extrair o arquivo `install.bat` de dentro do `install.rar` e clicar no arquivo para instalar automaticamente.
+3. É preciso instalar os pacotes: `default` + `socket.io`, e para fazer isso você deve extrair o arquivo `install.bat` de dentro do `install.rar` e clicar no arquivo para instalar automaticamente.
 4. Se tudo estiver instalado corretamente basta clicar no arquivo `index.bat` para iniciar. 
 5. Caso prefira instalar e executar manualmente, logo abaixo deixo todos os comandos para o executar via Shell ou CMD.
 
