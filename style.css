@@ -1,0 +1,132 @@
+
+body {
+    padding: 0;
+    margin: 40px 0 0 0;
+    overflow: hidden;
+
+    text-align: center;
+
+    background-color: #eee;
+    background-image: url( "./bg.png" );
+}
+
+#game-canvas {
+    display: inline-block;
+    width: 500px ;
+    height: 500px ;
+    margin: 0;
+
+    vertical-align: top;
+
+    border: solid 1px #000 ;
+    -webkit-box-shadow: 0 4px 17px 0 rgba(0,0,0,.19);
+       -moz-box-shadow: 0 4px 17px 0 rgba(0,0,0,.19);
+            box-shadow: 0 4px 17px 0 rgba(0,0,0,.19);
+
+    image-rendering: pixelated;
+    image-rendering:      crisp-edges;
+    image-rendering: -moz-crisp-edges;
+}
+
+#score-table {
+    display: inline-block;
+    width: 160px;
+    padding: 5px ;
+    margin: 0 ;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+
+    text-align: center;
+    vertical-align: top;
+
+    border: solid 1px #000 ;
+    background-color: #fff ;
+    -webkit-box-shadow: 0 4px 17px 0 rgba(0,0,0,.19);
+       -moz-box-shadow: 0 4px 17px 0 rgba(0,0,0,.19);
+            box-shadow: 0 4px 17px 0 rgba(0,0,0,.19);
+}
+
+#score-table tr.header td {
+    padding: 5px ;
+
+    font-weight: bold;
+
+    text-align: center;
+
+    border-bottom: 1px solid #ccc;
+}
+
+#score-table tr.footer td {
+    padding: 5px ;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    text-align: center;
+
+    border-top: 1px solid #ccc;
+}
+
+#score-table td {
+    padding: 5px ;
+
+    font-weight: bold;
+
+    text-align: center;
+}
+
+#score-table .socket-id {
+    display: inline-block;
+    width: 100px;
+    padding: 5px ;
+    overflow: hidden;
+
+    font-weight: bold;
+
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    color: #222;
+}
+
+#score-table .score-value {
+    padding: 5px ;
+
+    font-weight: bold;
+
+    text-align: center;
+
+    color: #000;
+}
+
+#score-table .current-player .socket-id,
+#score-table .current-player .score-value {
+    padding: 5px ;
+
+    font-weight: bold;
+
+    text-align: center;
+
+    color: #bdaa27;
+}
+
+#admin {
+    display: inline-block;
+    width: 200px;
+    overflow: hidden;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+#admin input,
+#admin button {
+    width: 160px;
+    height: 30px;
+    margin-bottom: 10px;
+
+    text-align: center;
+}
