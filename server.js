@@ -1,6 +1,9 @@
-	
+
+	const PORT = process.env.PORT || 3000 ;
+
 	const express = require('express')
 	const webApp = express()
+	const webServer = require('http').createServer(webApp)
 	const io = require('socket.io')(webServer)
 
 	const game = createGame() ;
@@ -23,7 +26,6 @@
 		res.sendFile(__dirname + '/game.html')
 	})
 
-	// a31ecc0596d72f84e5ee403ddcacb3d
 	webApp.get('/admin', function(req, res){
 		res.sendFile(__dirname + '/game-admin.html')
 	})
@@ -72,18 +74,21 @@
 		io.emit('concurrent-connections', io.engine.clientsCount)
 	}, 5000)
 
+
 	io.on('connection', function(socket){
-		const admin = socket.handshake.query.admin
+		const admin = socket.handshake.query.admin;
 
 		if (io.engine.clientsCount > maxConcurrentConnections && !admin) {
-			socket.emit('show-max-concurrent-connections-message')
-			socket.conn.close()
-			return
-		} else {
+			socket.emit('show-max-concurrent-connections-message');
+			socket.conn.close();
+			return();
+		}
+		else {
 			socket.emit('hide-max-concurrent-connections-message')
 		}
-		const playerState = game.addPlayer(socket.id)
-		socket.emit('bootstrap', game)
+
+		const playerState = game.addPlayer(socket.id);
+		socket.emit('bootstrap', game);
 
 		socket.broadcast.emit('player-update', {
 			socketId: socket.id,
@@ -93,7 +98,7 @@
 		socket.on('player-move', (direction) => {
 			game.movePlayer(socket.id, direction)
 
-			const fruitColisionIds = game.checkForFruitColision()
+			const fruitColisionIds = game.checkForFruitColision();
 
 			socket.broadcast.emit('player-update', {
 				socketId: socket.id,
@@ -105,26 +110,26 @@
 					fruitId: fruitColisionIds.fruitId,
 					score: game.players[socket.id].score
 				})
-				socket.emit('update-player-score', game.players[socket.id].score)
+				socket.emit('update-player-score', game.players[socket.id].score);
 			}
 
 		})
 
 		socket.on('disconnect', () => {
-			game.removePlayer(socket.id)
-			socket.broadcast.emit('player-remove', socket.id)
+			game.removePlayer(socket.id);
+			socket.broadcast.emit('player-remove', socket.id);
 		})
 
 		let fruitGameInterval
 		socket.on('admin-start-fruit-game', (interval) => {
-			console.log('> Fruit Game start')
-			clearInterval(fruitGameInterval)
+			console.log('> Fruit Game start');
+			clearInterval(fruitGameInterval);
 
 			fruitGameInterval = setInterval(() => {
-				const fruitData = game.addFruit()
+				const fruitData = game.addFruit();
 
 				if (fruitData) {
-					io.emit('fruit-add', fruitData)
+					io.emit('fruit-add', fruitData);
 				}
 			}, interval)
 		})
@@ -147,7 +152,11 @@
 			maxConcurrentConnections = newConcurrentConnections
 		})
 
-	});
+	})
+
+	webServer.listen( PORT , function(){
+		console.log('> Iniciando => Server Port: ', PORT );
+	})
 
 	function createGame() {
 
@@ -192,7 +201,6 @@
 		}
 
 		function movePlayer(socketId, direction) {
-
 			const player = game.players[socketId] ;
 			/*
 			console.log( 'X: '+ player.x );
@@ -251,8 +259,8 @@
 		}
 
 		function removeFruit(fruitId) {
-			delete game.fruits[fruitId]
 			// console.log( fruitId );
+			delete game.fruits[fruitId]
 		}
 
 		function checkForFruitColision() {
@@ -280,11 +288,6 @@
 				game.players[socketId].score = 0
 			}
 		}
+
 		return game
 	}
-
-    const PORT = process.env.PORT || 3000 ;
-
-    webApp.listen( PORT, function() {
-      console.log('App de Exemplo escutando na porta 3000!');
-    });
