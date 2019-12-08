@@ -1,0 +1,412 @@
+<!DOCTYPE HTML>
+<html lang="pt-br" >
+    <head>
+        <title> Desafio333-Nov_2019-WebSocket-Game_Multiplayer </title>
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+        <meta charset="utf-8">
+        <link  type="text/css" rel="stylesheet" href="./style.css" >
+        <script type="text/javascript" src="./socket.io/socket.io.js" ></script>
+    </head>
+    <body>
+
+        <canvas id="game-canvas"></canvas>
+
+        <div id="admin" >
+            
+            <table id="score-table" ></table><br><br>
+
+        </div>
+
+        <script>
+
+            const vScalePix    = 50 ;
+            const vFrameCanvas = 500 ;
+
+            var vCirclePix = ( vScalePix / 2 ) ;
+            var vCircleX   = ( vScalePix / 2 ) - 2 ;
+            var vCircleY   = ( vScalePix / 2 ) ;
+
+            var vScalePlayOne = 1.2 ;
+            var vScalePlayers = 1.5 ;
+            var vScaleFruits  = 1.7 ;
+
+            const vScaleCanvas = 0 ;
+
+            const vBgImg  = './gramado.jpg'  ;
+            const vPapImg = './paper.jpg'    ;
+            const vPacImg = './pacman.png'   ;
+            const vFanImg = './fantasma.png' ;
+            const vEmgImg = './emoji.png'    ;
+            const vCerImg = './cereja.png'   ;
+
+            let connected = false ;
+
+            let game ;
+            const scoreTable = document.getElementById('score-table') ;
+            const gameCanvas = document.getElementById('game-canvas') ;
+
+            let totalPlayersCount = '' ;
+            const collectFruitAudio = new Audio('collect.mp3') ;
+            const collect100FruitAudio = new Audio('100-collect.mp3') ;
+
+            function createRenderFrame( pObjCanvas ){
+                pObjCanvas.globalAlpha = 1
+                pObjCanvas.fillStyle = 'white' ; // black
+                pObjCanvas.fillRect(0, 0, game.canvasWidth, game.canvasHeight)
+            }
+
+            function createPlayerOneImg( pObjCanvas , pFrame , pUrlImg ){
+                
+                var oImage = new Image() ;
+                oImage.src = pUrlImg ;
+                pObjCanvas.globalAlpha = 1 ;
+
+                const currentPlayer = game.players[ socket.id ] ;
+
+                pObjCanvas.drawImage( oImage , currentPlayer.x - ( vCircleX / vScalePlayOne ) , currentPlayer.y - ( vCircleY / vScalePlayOne ) , vScalePix / vScalePlayOne , vScalePix / vScalePlayOne );
+
+            }
+
+            function createPlayersImg( pObjCanvas , pFrame , pUrlImg , pPlayer ){
+
+                const player = game.players[ pPlayer ] ;
+                pObjCanvas.globalAlpha = 0.9 ;
+
+                var oImage = new Image() ;
+                oImage.src = pUrlImg ;
+
+                pObjCanvas.beginPath();
+                pObjCanvas.drawImage( oImage , player.x - ( vCircleX / vScalePlayers ) , player.y - ( vCircleY / vScalePlayers ) , vScalePix / vScalePlayers , vScalePix / vScalePlayers );
+                pObjCanvas.fill();
+
+                // pObjCanvas.fillRect(player.x-vCircleX, player.y-vCircleY, vScalePix , vScalePix );
+
+                // pObjCanvas.beginPath();
+                // pObjCanvas.arc( player.x , player.y , vCirclePix / vScalePlayers , 0 , 2 * Math.PI , false );
+                // pObjCanvas.fill();
+
+            }
+
+            function createFruitsImg( pObjCanvas , pFrame , pUrlImg , pFruit ){
+
+                const fruit = game.fruits[ pFruit ] ;
+                pObjCanvas.globalAlpha = 1 ;
+
+                var oImage = new Image() ;
+                oImage.src = pUrlImg ;
+
+                pObjCanvas.beginPath();
+                pObjCanvas.drawImage( oImage , fruit.x - ( vCircleX / vScaleFruits ) , fruit.y - ( vCircleY / vScaleFruits ) , vScalePix / vScaleFruits , vScalePix / vScaleFruits );
+                pObjCanvas.fill();
+
+            }
+
+            function createBgImgCanvas( pObjCanvas , pFrame , pUrlImg ){
+                var oImage = new Image() ;
+                oImage.src = pUrlImg ;
+                // pObjCanvas.globalAlpha = 0.01 ;
+                pObjCanvas.beginPath();                                              
+                pObjCanvas.rect( 0 , 0 , pFrame , pFrame );
+                pObjCanvas.fillStyle = pObjCanvas.createPattern( oImage , "repeat" ) ;
+                pObjCanvas.fill();
+            }
+
+            function createBgXadrezCanvas( pObjCanvas , pFrame , pScale ){
+                // pObjCanvas.globalAlpha = 1;
+                for( var vI = 0 ; vI <= pFrame ; ( vI += pScale ) ){
+                    for( var vj = 0 ; vj <= pFrame ; ( vj += pScale ) ){
+                            pObjCanvas.strokeRect( vI  , vj , pScale , pScale );
+                     }
+                }
+                pObjCanvas.fill();
+            }
+
+            function createBgXadrezImgCanvas( pObjCanvas , pFrame , pScale , pUrlImg , pLine ){
+
+                var vScaleLine = ( pScale - pLine ) ;
+
+                var oImage = new Image() ;
+                oImage.src = pUrlImg ;
+
+                // pObjCanvas.globalAlpha = 0.85 ;
+                pObjCanvas.beginPath();  
+                for( var vI = 0 ; vI <= pFrame ; ( vI += pScale ) ){
+                    for( var vj = 0 ; vj <= pFrame ; ( vj += pScale ) ){
+                        pObjCanvas.rect( ( vI + pLine ) , ( vj + pLine ) , vScaleLine , vScaleLine );
+                    }
+                }
+                pObjCanvas.fillStyle = pObjCanvas.createPattern( oImage , "repeat" ) ;
+                pObjCanvas.fill();
+
+            }
+
+            function createBgXadrezImgDraw( pObjCanvas , pFrame , pScale , pUrlImg , pLine ){
+                
+                var vScaleLine = ( pScale - pLine ) ;
+
+                var oImage = new Image() ;
+                oImage.src = pUrlImg ;
+
+                // pObjCanvas.globalAlpha = 0.85 ;
+                pObjCanvas.beginPath();  
+
+                for( var vI = 0 ; vI <= pFrame ; ( vI += pScale ) ){
+                    for( var vj = 0 ; vj <= pFrame ; ( vj += pScale ) ){
+                        pObjCanvas.drawImage( oImage ,  ( vI + pLine ) , ( vj + pLine ) , vScaleLine , vScaleLine );
+                    }
+                }
+
+                pObjCanvas.fill();
+
+            }
+
+            const socket = io({
+                query: {
+                    admin: true
+                }
+            })
+
+            socket.on('connect', () => {
+                connected = true
+                console.log('> Connected to server')
+
+            })
+
+            socket.on('disconnect', () => {
+                console.log('> Disconnected')
+                connected = false
+            })
+
+            socket.on('bootstrap', ( gameInitialState ) => {
+
+                game = gameInitialState ;
+
+                console.log( '> bootstrap' );
+
+                gameCanvas.style.width  = '${ game.canvasWidth  * vScaleCanvas }px' ;
+                gameCanvas.style.height = '${ game.canvasHeight * vScaleCanvas }px' ;
+
+                gameCanvas.width = game.canvasWidth
+                gameCanvas.height = game.canvasHeight
+
+                const context = gameCanvas.getContext('2d')
+
+                requestAnimationFrame( renderGame );
+
+                function renderGame() {
+
+                    const allPixels = game.canvasWidth * game.canvasHeight ;
+
+                    createRenderFrame( context );
+
+                    // createBgImgCanvas( context , vFrameCanvas , vBgImg );
+                    // createBgXadrezCanvas( context , vFrameCanvas , vScalePix );
+                    // createBgXadrezImgCanvas( context , vFrameCanvas , vScalePix , vPapImg , 1 );
+                    createBgXadrezImgDraw( context , vFrameCanvas , vScalePix , vPapImg , 1 );
+
+                    for (const socketId in game.players) {
+                        createPlayersImg( context , vFrameCanvas , vFanImg , socketId );
+                    }
+
+                    for (const fruitId in game.fruits) {
+                        createFruitsImg( context , vFrameCanvas , vCerImg , fruitId );
+                    }
+
+                    createPlayerOneImg( context , vFrameCanvas , vEmgImg );
+                    
+                    requestAnimationFrame(renderGame)
+                }
+
+                updateScoreTable()
+            })
+
+            socket.on('player-update', (player) => {
+                game.players[player.socketId] = player.newState
+            })
+
+            socket.on('update-player-score', (score) => {
+                game.players[socket.id].score = score
+                updateScoreTable()
+            })
+
+            socket.on('player-remove', (socketId) => {
+                delete game.players[socketId]
+            })
+
+            socket.on('fruit-add', (fruit) => {
+                game.fruits[fruit.fruitId] = {
+                    x: fruit.x,
+                    y: fruit.y
+                }
+            })
+
+            socket.on('fruit-remove', ({fruitId, score}) => {
+                delete game.fruits[fruitId]
+                multipleOf100Remainder = score % 100
+
+                if (multipleOf100Remainder !== 0) {
+                    collectFruitAudio.pause()
+                    collectFruitAudio.currentTime = 0
+                    collectFruitAudio.play().catch(console.log)
+                }
+
+                if (multipleOf100Remainder === 0 && score !== 0) {
+                    collectFruitAudio.pause()
+                    collect100FruitAudio.pause()
+                    collect100FruitAudio.currentTime = 0
+                    collect100FruitAudio.play().catch(console.log)
+                }
+
+                updateScoreTable()
+            })
+
+            socket.on('concurrent-connections', (concurrentConnections) => {
+                totalPlayersCount = concurrentConnections
+                updateScoreTable()
+            })
+
+            function updateScoreTable() {
+                const maxResults = 10
+                
+                let scoreTableInnerHTML = `
+                    <tr class="header" >
+                        <td>Top 10</td>
+                        <td>Pontos</td>
+                    </tr>
+                `;
+
+                const scoreArray = []
+
+                for (socketId in game.players) {
+                    const player = game.players[socketId]
+                    const myName = game.name 
+                    scoreArray.push({
+                        socketId: socketId ,
+                        score: player.score
+                    })
+                }
+
+                const scoreArraySorted = scoreArray.sort((first, second) => {
+                    if (first.score < second.score) {
+                        return 1
+                    }
+
+                    if (first.score > second.score) {
+                        return -1
+                    }
+
+                    return 0
+                })
+
+                const scoreSliced = scoreArraySorted.slice(0, maxResults)
+
+                scoreSliced.forEach((score) => {
+
+                    scoreTableInnerHTML += `
+                        <tr class="${ socket.id === score.socketId ? 'current-player' : ''}" >
+                            <td class="socket-id"> ${ score.socketId.substr( 1 , 10 )}</td>
+                            <td class="score-value">${score.score}</td>
+                        </tr>
+                    `;
+                })
+
+                let playerNotInTop10 = true
+
+                for (const score of scoreSliced) {
+                    if (socket.id === score.socketId) {
+                        playerNotInTop10 = false
+                        break
+                    }
+                    
+                    playerNotInTop10 = true
+                }
+
+                if (playerNotInTop10) {
+                    scoreTableInnerHTML += `
+                        <tr class="current-player bottom">
+                            <td class="socket-id">${socket.id}</td>
+                            <td class="score-value">${game.players[socket.id].score}</td>
+                        </tr>
+                    `;
+                }
+
+                scoreTableInnerHTML += `
+                    <tr class="footer">
+                        <td>Jogadores</td>
+                        <td align="right">${totalPlayersCount}</td>
+                    </tr>
+                `;
+
+                scoreTable.innerHTML = scoreTableInnerHTML
+                
+            }
+
+            function handleKeydown(event) {
+
+                if (connected) {
+
+                    const player = game.players[ socket.id ] ;
+
+                    if (event.which === 37 && player.x - vScalePix >= 0) {
+                        player.x = player.x - vScalePix
+                        socket.emit('player-move', 'left')
+                        return
+                    }
+
+                    if (event.which === 38 && player.y - vScalePix >= 0) {
+                        player.y = player.y - vScalePix
+                        socket.emit('player-move', 'up')
+                        return
+                    }
+
+                    if (event.which === 39 && player.x + vScalePix < game.canvasWidth) {
+                        player.x = player.x + vScalePix
+                        socket.emit('player-move', 'right')
+                        return
+                    }
+
+                    if (event.which === 40 && player.y + vScalePix < game.canvasHeight) {
+                        player.y = player.y + vScalePix
+                        socket.emit('player-move', 'down')
+                        return
+                    }
+
+                }
+
+            }
+
+            function throttle(callback, delay) {
+                let isThrottled = false, args, context;
+
+                function wrapper() {
+                    if (isThrottled) {
+                    args = arguments;
+                    context = this;
+                    return;
+                    }
+
+                    isThrottled = true;
+                    callback.apply(this, arguments);
+                    
+                    setTimeout(() => {
+                    isThrottled = false;
+                    if (args) {
+                        wrapper.apply(context, args);
+                        args = context = null;
+                    }
+                    }, delay);
+                }
+
+                return wrapper;
+            }
+
+            const throttledKeydown = throttle(handleKeydown, 80)
+
+            document.addEventListener('keydown', throttledKeydown)
+
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,7 @@
+ports:
+  - port: 3000
+    onOpen: open-preview
+tasks:
+  - before: cd ./
+    init: npm install --save
+    command: npm start
