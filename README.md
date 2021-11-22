@@ -136,8 +136,11 @@ Nessa playlist iremos construir tudo do zero utilizando JavaScript no frontend e
 **[Instagram](https://www.instagram.com/DomSamuka/)** - 
 **[FaceBook](https://www.facebook.com/DomSamuka777)** - 
 **[Youtube](https://www.youtube.com/channel/UCYjNi1g5DClq4OD3-KkTt5w?sub_confirmation)** - 
+**[TikTok](https://www.tiktok.com/@domsamuka777)** - 
 **[Twitter](https://twitter.com/dom_samuka)** - 
+**[TinkerCad](https://www.tinkercad.com/users/7RvSjXHEe7Z-domsamuka?category=circuits&sort=likes&view_mode=default)** - 
 **[WebSite](https://DomSamuka.com)** - 
+**[Messenger](https://www.messenger.com/t/DomSamuka777)** - 
 **[WhatsApp](https://api.whatsapp.com/send?phone=5548996608106&text=DomSamuka)** 
 
 ##### Cursos Certificados:
@@ -151,8 +154,18 @@ Nessa playlist iremos construir tudo do zero utilizando JavaScript no frontend e
 **[Página](https://www.facebook.com/MeuSucessoCompartilhado/)** - 
 **[Grupo](https://www.facebook.com/groups/sucessocompartilhado/)** - 
 **[Youtube](https://www.youtube.com/channel/UCet3CvBNgsU_xU5Q6i949Dg?sub_confirmation)** - 
+**[TikTok](https://www.tiktok.com/@SucessoCompartilhado)** - 
 **[Vimeo](https://vimeo.com/sucessocompartilhado)** - 
 **[Twitch](https://www.twitch.tv/sucessocompartilhado)** - 
 **[Booyah](https://booyah.live/channels/95935397)** - 
-**[Twitter](https://twitter.com/SucessoComparti)** - 
+**[Twitter](https://twitter.com/sucessocomparti)** - 
+**[TinkerCad](https://www.tinkercad.com/users/1acXiErK8OY-Sucesso-Compartilhado)** - 
+**[Messenger](https://t.me/SucessoCompartilhado)** - 
+**[Discord](https://discord.gg/kptD5XHMgG)** - 
+**[Slack](SucessoCompartilhado.slack.com)** - 
+**[StackOverFlow](https://pt.stackoverflow.com/users/264614/SucessoCompartilhado)** - 
+**[HackerRank](https://www.hackerrank.com/SucessoComparti1)** - 
+**[CodePen](https://codepen.io/sucessocompartilhado)** - 
+**[CodecAdemy](https://www.codecademy.com/profiles/SucessoCompartilhado)** - 
+**[Apoia-Se](https://apoia.se/sucessocompartilhado)** - 
 **[WebSite](https://MeuSucessoCompartilhado.com)** 
