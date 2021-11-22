@@ -132,9 +132,9 @@ Nessa playlist iremos construir tudo do zero utilizando JavaScript no frontend e
 | :---: |
 
 **[GitHub](https://github.com/DomSamuka)** - 
-**[LinkEdin](https://www.linkedin.com/in/DomSamuka/)** - 
+**[Linkedin](https://www.linkedin.com/in/DomSamuka/)** - 
 **[Instagram](https://www.instagram.com/DomSamuka/)** - 
-**[Perfil FaceBook](https://www.facebook.com/DomSamuka777)** - 
+**[FaceBook](https://www.facebook.com/DomSamuka777)** - 
 **[Youtube](https://www.youtube.com/channel/UCYjNi1g5DClq4OD3-KkTt5w?sub_confirmation)** - 
 **[Twitter](https://twitter.com/dom_samuka)** - 
 **[WebSite](https://DomSamuka.com)** - 
@@ -146,10 +146,10 @@ Nessa playlist iremos construir tudo do zero utilizando JavaScript no frontend e
 
 ##### Sucesso Compartilhado:
 **[GitHub](https://github.com/SucessoCompartilhado/)** - 
-**[LinkEdin](https://linkedin.com/company/SucessoCompartilhado/)** - 
+**[Linkedin](https://linkedin.com/company/SucessoCompartilhado/)** - 
 **[Instagram](https://www.instagram.com/MeuSucessoCompartilhado/)** - 
-**[Página FaceBook](https://www.facebook.com/MeuSucessoCompartilhado/)** - 
-**[Grupo FaceBook](https://www.facebook.com/groups/sucessocompartilhado/)** - 
+**[Página](https://www.facebook.com/MeuSucessoCompartilhado/)** - 
+**[Grupo](https://www.facebook.com/groups/sucessocompartilhado/)** - 
 **[Youtube](https://www.youtube.com/channel/UCet3CvBNgsU_xU5Q6i949Dg?sub_confirmation)** - 
 **[Vimeo](https://vimeo.com/sucessocompartilhado)** - 
 **[Twitch](https://www.twitch.tv/sucessocompartilhado)** - 
