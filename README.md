@@ -131,29 +131,28 @@ Nessa playlist iremos construir tudo do zero utilizando JavaScript no frontend e
 | [<img src="https://avatars1.githubusercontent.com/u/57776656?s=460&v=4" width="115" ><br><sub>@DomSamuka</sub>](https://github.com/domsamuka) |
 | :---: |
 
-**[Udemy](https://www.udemy.com/user/dom-samuka/)** - 
-**[Facebook](https://www.facebook.com/DomSamuka777)** - 
-**[Grupo](https://www.facebook.com/groups/DomSamuka/)** - 
-**[Página](https://www.facebook.com/DomSamukaOficial/)** - 
-**[Instagram](https://www.instagram.com/domsamuka/)** - 
-**[Twitter](https://twitter.com/Dom_Samuka)** - 
-**[WhatsApp](https://api.whatsapp.com/send?phone=5548996608106&text=DomSamuka)** - 
-**[Youtube](https://www.youtube.com/channel%2FUCVNhz3-C1bGnh-nrYKVF9eA%2F%3Fsub_confirmation%3D1)** - 
-**[WebSite](https://www.domsamuka.com/)** 
+**[GitHub](https://github.com/DomSamuka)** - 
+**[LinkEdin](https://www.linkedin.com/in/DomSamuka/)** - 
+**[Instagram](https://www.instagram.com/DomSamuka/)** - 
+**[Perfil FaceBook](https://www.facebook.com/DomSamuka777)** - 
+**[Youtube](https://www.youtube.com/channel/UCYjNi1g5DClq4OD3-KkTt5w?sub_confirmation)** - 
+**[Twitter](https://twitter.com/dom_samuka)** - 
+**[WebSite](https://DomSamuka.com)** - 
+**[WhatsApp](https://api.whatsapp.com/send?phone=5548996608106&text=DomSamuka)** 
 
-##### Curso de Games:
-**[Grupo](https://www.facebook.com/groups/CursoDeGames/)** - 
-**[Página](https://www.facebook.com/CursoDeGame/)** - 
-**[Instagram](https://www.instagram.com/cursodegame/)** - 
-**[Twitter](https://twitter.com/CursoDeGame)** - 
-**[WhatsApp](https://chat.whatsapp.com/Gqtso0OjSEVLN3TRTHgGyG)** - 
-**[Telegram](https://t.me/CursoDeGames)** - 
-**[Youtube](https://www.youtube.com/channel%2FUCbe3URfIcxRnn67UCEQxkjQ%2F%3Fsub_confirmation%3D1)** - 
-**[WebSite](https://www.cursodegames.com/)** 
+##### Cursos Certificados:
+**[DankiCode](https://cursos.dankicode.com/certificados?cpf=008.742.989-62)** - 
+**[Udemy](https://www.udemy.com/user/dom-samuka/)** 
 
-##### Hipnose Florianópolis:
-**[Grupo](https://www.facebook.com/groups/HipnoseFlorianopolis/)** - 
-**[Instagram](https://www.instagram.com/hipnosefloripa/)** - 
-**[Twitter](https://twitter.com/HipnoFloripa)** - 
-**[WhatsApp](https://chat.whatsapp.com/invite/FJj00ZIKgjTCalzsP27Y3T)** - 
-**[Youtube](https://www.youtube.com/channel%2FUCet3CvBNgsU_xU5Q6i949Dg%2F%3Fsub_confirmation%3D1)**  
+##### Sucesso Compartilhado:
+**[GitHub](https://github.com/SucessoCompartilhado/)** - 
+**[LinkEdin](https://linkedin.com/company/SucessoCompartilhado/)** - 
+**[Instagram](https://www.instagram.com/MeuSucessoCompartilhado/)** - 
+**[Página FaceBook](https://www.facebook.com/MeuSucessoCompartilhado/)** - 
+**[Grupo FaceBook](https://www.facebook.com/groups/sucessocompartilhado/)** - 
+**[Youtube](https://www.youtube.com/channel/UCet3CvBNgsU_xU5Q6i949Dg?sub_confirmation)** - 
+**[Vimeo](https://vimeo.com/sucessocompartilhado)** - 
+**[Twitch](https://www.twitch.tv/sucessocompartilhado)** - 
+**[Booyah](https://booyah.live/channels/95935397)** - 
+**[Twitter](https://twitter.com/SucessoComparti)** - 
+**[WebSite](https://MeuSucessoCompartilhado.com)** 
